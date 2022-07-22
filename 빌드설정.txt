@@ -1,0 +1,34 @@
+app.json에 알맞은 곳에 추가
+(프로젝트 작업과정에서 코드가 꼬여있을수있으니 주의)
+{
+  "expo": {
+    "name": "Your App Name",
+    "icon": "./path/to/your/app-icon.png",
+    "version": "1.0.0",
+    "slug": "your-app-slug",
+    "ios": {
+      "bundleIdentifier": "com.yourcompany.yourappname",
+      "buildNumber": "1.0.0"
+    },
+    "android": {
+      "package": "com.yourcompany.yourappname",
+      "versionCode": 1
+    }
+  }
+}
+
+안드로이드
+1.스탠드얼론으로 빌드   --테스트시엔 이거로 빌드       ! expo무료계정 빌드시간 30분
+expo build:android -t apk
+2.앱번들로 빌드(구글플레이스토어 준수사항)   -- 플레이스토어 등록하기위한 빌드 !오래걸림
+expo build:android -t app-bundle
+
+IOS (애플 개발자계정 필요)
+1.앱 빌드
+expo build:ios -t archive
+2.시뮬레이터용 빌드
+expo build:ios -t simulator
+3.앱 식별, 배포, 인증서, 예비인증서 생성(해봤는데 안돼서 잘 모르겠습니다..)
+expo build:ios
+
+빌드방법은 엑스포,네이티브,패키지 버전에따라 바뀔수있습니다
